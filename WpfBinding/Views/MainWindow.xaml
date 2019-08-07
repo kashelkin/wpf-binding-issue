@@ -20,7 +20,9 @@
             <TextBlock TextWrapping="WrapWithOverflow">After clearing collection you will see that SelectedItem in ChildWiewModel is set to null.</TextBlock>
             <Button Margin="0,6,0,16" Height="25" Command="{Binding ClearCollectionCommand}"
                     FontWeight="Bold">3. Clear collection</Button>
-            <Button FontWeight="Bold" Height="25" Command="{Binding FillCollectionCommand}">Refill collection</Button>
+            <Button Margin="0,0,0,16" FontWeight="Bold" Height="25" Command="{Binding FillCollectionCommand}">Refill collection</Button>
+            <Button FontWeight="Bold" Height="25" Command="{Binding CollectGarbageCommand}">Collect garbage</Button>
+            <TextBlock Margin="0,16,0,0" FontWeight="Bold" Text="{Binding AwaitedText.Result}"/>
         </StackPanel>
         <ListBox Width="80" Grid.Column="1" ItemsSource="{Binding Collection}"/>
     </Grid>

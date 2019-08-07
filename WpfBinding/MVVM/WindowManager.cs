@@ -75,8 +75,7 @@ namespace WpfBinding.MVVM
             var window = CreateWindowInstanceWithVM(vm);
             window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             await window.Dispatcher.InvokeAsync(() => window.ShowDialog());
-            window.Close();
-            Debug.Print(window.IsActive.ToString());
+            window.DataContext = null;
         }
     }
 }
