@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfBinding.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBinding.Views"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight">
+    <Grid Margin="12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="0,0,12,0" Width="300">
+            <TextBlock TextWrapping="WrapWithOverflow">This collection is passed to ChildViewModel ---></TextBlock>
+            <Button Margin="0,6,0,16" Height="25" Command="{Binding OpenChildWindowCommand}" 
+                    FontWeight="Bold">1. Open Child Window</Button>
+            <TextBlock TextWrapping="WrapWithOverflow">After clearing collection you will see that SelectedItem in ChildWiewModel is set to null.</TextBlock>
+            <Button Margin="0,6,0,16" Height="25" Command="{Binding ClearCollectionCommand}"
+                    FontWeight="Bold">3. Clear collection</Button>
+            <Button FontWeight="Bold" Height="25" Command="{Binding FillCollectionCommand}">Refill collection</Button>
+        </StackPanel>
+        <ListBox Width="80" Grid.Column="1" ItemsSource="{Binding Collection}"/>
+    </Grid>
+</Window>
